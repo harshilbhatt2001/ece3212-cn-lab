@@ -2,7 +2,15 @@ CFLAGS = -ggdb -Wall
 LIBS = -lm
 CC = clang
 
-all: crc hamming dijkstra bellman_ford
+all: bit_stuffing character_count cnc_poynomial checksum crc hamming dijkstra bellman_ford
+bit_stuffing:
+	$(CC) bit_stuffing.c $(LIBS) -o $@
+character_count:
+	$(CC) character_count.c $(LIBS) -o $@
+cnc_poynomial:
+	$(CC) cnc_poynomial.c $(LIBS) -o $@
+checksum:
+	$(CC) checksum.c $(LIBS) -o $@
 crc:
 	$(CC) crc.c $(LIBS) -o $@
 hamming:
@@ -14,4 +22,4 @@ bellman_ford:
 distance_vector:
 	$(CC) distance_vector.c $(LIBS) -o $@
 clean:
-	rm -f crc hamming dijkstra bellman_ford distance_vector
+	rm -f bit_stuffing character_count cnc_poynomial checksum crc hamming dijkstra bellman_ford distance_vector
